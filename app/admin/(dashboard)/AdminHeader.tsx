@@ -12,7 +12,7 @@ interface CategoriesProp {
 
 export default function AdminHeader({ categories }: CategoriesProp) {
   const params = useParams();
-  const { isActiveMenu, setIsActiveMenu } = useMenuToggleStore();
+  const { setIsActiveMenu } = useMenuToggleStore();
   const currentCategoryId = params?.categoryId;
 
   const childCategory = categories?.filter((child) => child.parentCategoryId)
@@ -25,8 +25,8 @@ export default function AdminHeader({ categories }: CategoriesProp) {
       {
         currentCategoryId ?
           (
-            <div className="lg:flex items-center justify-center text-gray-400 gap-2 hidden">
-              <Link href={'/admin'} className="cursor-pointer flex justify-center items-center gap-1">
+            <div className="lg:flex items-center justify-left text-gray-400 hidden w-full gap-4">
+              <Link href={'/admin'} className="cursor-pointer flex justify-center items-center gap-1 ">
                 <Home size={16} />
                 <span className="text-sm">홈</span>
               </Link>

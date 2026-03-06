@@ -1,3 +1,4 @@
+import CategoryContainer from "./CategoryContainer";
 
 interface CategoryPageProp {
   params: Promise<{
@@ -10,8 +11,6 @@ export default async function CategoryPage({ params }: CategoryPageProp) {
   const currentId = resolvedParams.categoryId;
 
   return (
-    <div>
-      sss
-    </div>
+    <CategoryContainer currentId={Number(currentId)} />
   )
 }

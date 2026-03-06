@@ -8,6 +8,7 @@ export interface Article {
   articleStatus: string,
   blogConfirm: boolean,
   createdAt: string,
+  views: number,
   category: {
     categoryName: string
   };
@@ -22,7 +23,10 @@ export interface GetArticleResponse {
   total: number,
   page: number,
   hasCategory: boolean,
-  totalPage: number
+  totalViews: number,
+  totalPage: number,
+  yesterDayArticleTotal: number,
+  yesterDayViewsTotal: number
 }
 
 export const articleService = {
@@ -30,6 +34,11 @@ export const articleService = {
     const response = await axiosAdminInstance.get<GetArticleResponse>(`/article/category/${categoryId}`, {
       params: { page, limit } // 자동으로 URL 끝에 ?page=1&limit=15를 붙임
     });
+    return response.data;
+  },
+
+  patchBlogConfirm: async (articleId: number | string, blogConfirm: boolean) => {
+    const response = await axiosAdminInstance.patch(`/article/confirm/${articleId}`, { blogConfirm: blogConfirm });
     return response.data;
   }
 }

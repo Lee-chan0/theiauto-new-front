@@ -53,7 +53,7 @@ export default function AdminSidebar({ categories }: SidebarProps) {
     bg-white h-full font-sans flex flex-col 
     transition-all transform lg:translate-x-0 ${isActiveMenu ? `translate-x-0` : `-translate-x-full`}`}>
       <Link href={'/admin'}>
-        <div className="w-full h-18 lg:h-15 border border-x-0 border-t-0 border-b-black/10 flex items-center justify-center pl-2 pr-14 shrink-0">
+        <div className="w-full h-18 lg:h-16 border border-x-0 border-t-0 border-b-black/10 flex items-center justify-center pl-2 pr-14 shrink-0">
           <img
             src='/assets/images/theiautoLogo.png'
             alt="logo"

@@ -65,10 +65,6 @@ export default function AdminLoginPage() {
         className='relative z-10 w-full max-w-100 md:max-w-250 h-125 md:h-150 flex overflow-hidden rounded-3xl border border-white/20 bg-white/5 shadow-2xl backdrop-blur-xl'
       >
 
-        {/* --- 1. 회원가입 폼 섹션 ---
-          [Mobile]: hidden (보이지 않음)
-          [Desktop]: md:flex (보임 + 슬라이딩 로직)
-        */}
         <section
           className={`
             hidden md:flex 
